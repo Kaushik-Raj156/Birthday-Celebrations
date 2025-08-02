@@ -1,0 +1,342 @@
+.birthday-cake {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.cake {
+  position: relative;
+  width: 340px;
+  height: 240px;
+  margin-bottom: 20px;
+}
+
+.cake-layer {
+  position: absolute;
+  border-radius: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cake-bottom {
+  width: 320px;
+  height: 90px;
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  bottom: -24px;
+  left: 17px;
+}
+
+.cake-middle {
+  width: 280px;
+  height: 80px;
+  background: linear-gradient(135deg, #D2691E, #CD853F);
+  bottom: 50px;
+  left: 37px;
+}
+
+.cake-top {
+  width: 240px;
+  height: 70px;
+  background: linear-gradient(135deg, #F4A460, #DEB887);
+  bottom: 120px;
+  left: 56px;
+}
+
+/* .frosting {
+  position: absolute;
+  top: 22px;
+  left: 53%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 40px;
+  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+} */
+
+/* .frosting-detail {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #FF69B4;
+  border-radius: 50%;
+  top: 10px;
+} */
+
+/* .frosting-detail:nth-child(1) { left: 20px; }
+.frosting-detail:nth-child(2) { left: 60px; }
+.frosting-detail:nth-child(3) { right: 20px; } */
+
+.candles {
+  position: absolute;
+  top: -4px;
+  left: 51%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+}
+
+.candle {
+  position: relative;
+  width: 12px;
+  height: 60px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.candle-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 6px;
+}
+
+.flame {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 20px;
+  background: linear-gradient(135deg, #FF4500, #FF6347);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 0.1s infinite alternate;
+}
+
+.flame-inner {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 12px;
+  background: #FFFF00;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1.1); }
+}
+
+.candle.blown .flame {
+  animation: extinguish 1.5s ease-out forwards;
+}
+
+@keyframes extinguish {
+  0% { 
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    background: linear-gradient(135deg, #FF4500, #FF6347);
+  }
+  20% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 1;
+    background: linear-gradient(135deg, #FF6347, #FF8C00);
+  }
+  40% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0.8;
+    background: linear-gradient(135deg, #FF8C00, #FFA500);
+  }
+  60% {
+    transform: translateX(-50%) scale(0.6);
+    opacity: 0.6;
+    background: linear-gradient(135deg, #FFA500, #FFD700);
+  }
+  80% {
+    transform: translateX(-50%) scale(0.3);
+    opacity: 0.3;
+    background: linear-gradient(135deg, #FFD700, #FFFF00);
+  }
+  100% { 
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+    background: linear-gradient(135deg, #FFFF00, transparent);
+  }
+}
+
+.cake-plate {
+  width: 360px;
+  height: 25px;
+  background: linear-gradient(135deg, #C0C0C0, #E5E5E5);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: -10px;
+}
+
+.mic-status {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mic-active {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #4ECDC4, #44A08D);
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.mic-inactive {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mic-icon {
+  font-size: 1.2rem;
+}
+
+.mic-text {
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.audio-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.blow-instruction {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: pulse 1s infinite;
+}
+
+.audio-bar-container {
+  width: 20px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  padding: 5px;
+}
+
+.audio-bar {
+  width: 100%;
+  background: linear-gradient(135deg, #4ECDC4, #44A08D);
+  border-radius: 5px;
+  transition: height 0.1s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cake {
+    width: 290px;
+    height: 200px;
+  }
+  
+  .cake-bottom {
+    width: 270px;
+    height: 75px;
+  }
+  
+  .cake-middle {
+    width: 230px;
+    height: 65px;
+    bottom: 75px;
+  }
+  
+  .cake-top {
+    width: 190px;
+    height: 55px;
+    bottom: 140px;
+  }
+  
+  .frosting {
+    width: 170px;
+    height: 40px;
+  }
+  
+  .candles {
+    gap: 15px;
+  }
+  
+  .candle {
+    width: 10px;
+    height: 50px;
+  }
+  
+  .cake-plate {
+    width: 310px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cake {
+    width: 240px;
+    height: 160px;
+  }
+  
+  .cake-bottom {
+    width: 220px;
+    height: 60px;
+  }
+  
+  .cake-middle {
+    width: 180px;
+    height: 50px;
+    bottom: 60px;
+  }
+  
+  .cake-top {
+    width: 140px;
+    height: 40px;
+    bottom: 110px;
+  }
+  
+  .frosting {
+    width: 120px;
+    height: 30px;
+  }
+  
+  .candles {
+    gap: 10px;
+  }
+  
+  .candle {
+    width: 8px;
+    height: 40px;
+  }
+  
+  .cake-plate {
+    width: 260px;
+  }
+  
+  .mic-active, .mic-inactive {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .mic-text {
+    font-size: 0.8rem;
+  }
+} 
